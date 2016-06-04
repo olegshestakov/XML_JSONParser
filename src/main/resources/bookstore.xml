@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- bookstore.xml -->
+<bookstore>
+    <book ISBN="0123456001">
+        <title>Java for Dummies</title>
+        <author>Tah Ah Teck</author>
+        <category>Programming</category>
+        <year>2009</year>
+        <edition>7</edition>
+        <price>19.99</price>
+    </book>
+    <book ISBN="0123456002">
+        <title>More Java for Dummies</title>
+        <author>Tah Ah Teck</author>
+        <category>Programming</category>
+        <year>2008</year>
+        <price>25.99</price>
+    </book>
+</bookstore>

@@ -1,0 +1,23 @@
+{
+  "bookstore": [
+    {
+      "book": {
+        "title": "Java for Dummies",
+        "author": "Tah Ah Teck",
+        "category": "Programming",
+        "year": 2009,
+        "edition": 7,
+        "price": 19.99
+      }
+    },
+    {
+      "book": {
+        "title": "More Java for Dummies",
+        "author": "Tah Ah Teck",
+        "category": "Programming",
+        "year": 2008,
+        "price": 25.99
+      }
+    }
+  ]
+}
