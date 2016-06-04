@@ -1,5 +1,8 @@
 package org.sourceit;
 
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl;
 import org.sourceit.dom.DParser;
@@ -21,18 +24,52 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
+        String bookJson =
+                "{\n" +
+                        "  \"bookstore\": [\n" +
+                        "    {\n" +
+                        "      \"book\": {\n" +
+                        "        \"title\": \"Java for Dummies\",\n" +
+                        "        \"author\": \"Tah Ah Teck\",\n" +
+                        "        \"category\": \"Programming\",\n" +
+                        "        \"year\": 2009,\n" +
+                        "        \"edition\": 7,\n" +
+                        "        \"price\": 19.99\n" +
+                        "      }\n" +
+                        "    },\n" +
+                        "    {\n" +
+                        "      \"book\": {\n" +
+                        "        \"title\": \"More Java for Dummies\",\n" +
+                        "        \"author\": \"Tah Ah Teck\",\n" +
+                        "        \"category\": \"Programming\",\n" +
+                        "        \"year\": 2008,\n" +
+                        "        \"price\": 25.99\n" +
+                        "      }\n" +
+                        "    }\n" +
+                        "  ]\n" +
+                        "}";
 
-//        ObjectMapper mapper = new ObjectMapper();
-//
-//        mapper.readValue(new File(""), Book.class);
+        JsonFactory factory = new JsonFactory();
+        JsonParser parser = factory.createParser(bookJson);
+
+        while (!parser.isClosed()) {
+//            if (parser.getCurrentName() != null && parser.getValueAsString() != null) {
+                System.out.println("curr name -- " + parser.getCurrentName());
+                System.out.println("curr value -- " + parser.getValueAsString());
+                System.out.println("curr token -- " + parser.getCurrentToken());
+//            }
+            parser.nextToken();
+        }
+
+
 //        parseDOMMethod();
 
 //        SAXParser saxParser =
 
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        SAXParser parser = factory.newSAXParser();
-        parser.parse(new FileInputStream("./target/classes/bookstore.xml"),
-                new SAXXMLParser());
+//        SAXParserFactory factory = SAXParserFactory.newInstance();
+//        SAXParser parser = factory.newSAXParser();
+//        parser.parse(new FileInputStream("./target/classes/bookstore.xml"),
+//                new SAXXMLParser());
 
 
     }
