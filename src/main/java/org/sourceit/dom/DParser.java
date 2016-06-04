@@ -14,6 +14,14 @@ public class DParser implements BookReadable {
 
     private DOMParser parser;
 
+    public DParser() {
+        parser = new DOMParser();
+    }
+
+    public DOMParser getParser() {
+        return parser;
+    }
+
     public List<Book> getBooks() {
         return null;
     }
